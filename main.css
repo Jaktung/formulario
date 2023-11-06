@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 80px auto;
+    width: 100%;
+    text-align: center;
+    max-width: 640px;
+}
+
+.container input {
+    border-color: blue;
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    resize: none;
+    padding: 8px;
+}
+
+button {
+    margin-top: 32px;
+    background-color: lightblue;
+}
+
+
+
