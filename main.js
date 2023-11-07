@@ -1,29 +1,24 @@
 const form = document.getElementById('form-valido');
 
-function validarFormulario(valorA, valorB) {
-    return valorB > valorA; 
- }
-
 let formvalid = false;
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+function numbervalid(valorA, valorB) {
+    return valorB > valorA;
+}
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let valorA = parseFloat(document.getElementById('n1').value);
+    let valorB = parseFloat(document.getElementById('n2').value);
 
-            const valorA = document.getElementById('n1')
-            const valorB = document.getElementById('n2')
-            const mensagemSucesso = 'O número é valido!'
-
-        formvalid = validarFormulario
-            if (formvalid){
-                alert(mensagemSucesso)
-                valorA.value('')
-                valorB.value('')
-
-            }  else if (valorA == valorB){
-                alert("Os valores não podem ser iguais")
-            }  else{
-                alert("O primeiro valor não pode ser maior que o segundo!")
-            }
-        });
-
-        console.log(form);
+    if (numbervalid(valorA, valorB)){
+        document.querySelector('.error-message').style.display = 'none';
+        document.querySelector('.success-message').style.display = 'block';
+        valorA.value = '';
+        valorB.value = '';
+    } 
+    else {
+        document.querySelector('.error-message').style.display = 'block';
+        document.querySelector('.success-message').style.display = 'none';
+        
+    }
+});
